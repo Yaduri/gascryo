@@ -1,5 +1,4 @@
 import { useState, type FormEvent } from 'react';
-import { ArrowRightUpIcon } from '@solar-icons/react/linear/arrow-right-up';
 import { CheckIcon } from '@solar-icons/react/linear/check';
 import { CopyIcon } from '@solar-icons/react/linear/copy';
 import { LetterIcon } from '@solar-icons/react/bold-duotone/letter';
@@ -60,42 +59,38 @@ export function ContactFooter() {
           <div className="grid gap-12 lg:grid-cols-12">
             {/* Left Info Column */}
             <div className="lg:col-span-5">
-              <h2 className="font-[var(--font-display)] text-[2rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-white sm:text-[2.75rem]">
+              <h2 className="font-[var(--font-display)] text-[2rem] font-semibold leading-[1.12] tracking-[-0.025em] text-white sm:text-[2.65rem]">
                 Solicite uma avaliação técnica com a equipe GasCryo.
               </h2>
-              <p className="mt-4 max-w-[46ch] text-[1.03rem] leading-relaxed text-[#B9CAE2]">
-                Informe os dados do seu tanque, cabine ou projeto sob medida. Ao enviar, abrimos o
-                WhatsApp técnico com o resumo pronto para agilizar seu atendimento em qualquer
-                região do Brasil.
+              <p className="mt-4 max-w-[44ch] text-[1.02rem] leading-relaxed text-[#B9CAE2]">
+                Envie os dados do seu tanque, cabine ou projeto sob medida para atendimento técnico
+                em qualquer estado do Brasil.
               </p>
 
-              <div className="mt-9 space-y-4">
+              <div className="mt-9 space-y-3.5">
                 <a
                   href={buildWhatsAppUrl(
                     'Olá equipe GasCryo! Gostaria de falar com a equipe técnica.'
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between rounded-xl border border-white/12 bg-[#0B1A33]/70 px-5 py-4 transition-colors hover:border-[#E5A910]/60"
+                  className="flex items-center gap-3.5 rounded-xl border border-white/12 bg-[#0B1A33]/65 px-5 py-4 transition-colors hover:border-[#E5A910]/60"
                 >
-                  <span className="flex items-center gap-3.5">
-                    <WhatsAppIcon className="h-5 w-5 text-[#25D366]" />
-                    <span>
-                      <span className="block text-xs text-[#9BB0CE]">WhatsApp Técnico</span>
-                      <span className="tabular-spec text-base font-semibold text-white">
-                        {COMPANY.phoneDisplay}
-                      </span>
+                  <WhatsAppIcon className="h-5 w-5 shrink-0 text-[#25D366]" />
+                  <span>
+                    <span className="block text-xs text-[#9BB0CE]">WhatsApp Técnico</span>
+                    <span className="tabular-spec text-base font-semibold text-white">
+                      {COMPANY.phoneDisplay}
                     </span>
                   </span>
-                  <ArrowRightUpIcon className="h-4 w-4 text-[#9BB0CE]" />
                 </a>
 
-                <div className="flex items-center justify-between rounded-xl border border-white/12 bg-[#0B1A33]/70 px-5 py-4">
+                <div className="flex items-center justify-between rounded-xl border border-white/12 bg-[#0B1A33]/65 px-5 py-4">
                   <a
                     href={`mailto:${COMPANY.email}`}
                     className="flex items-center gap-3.5 hover:text-[#E5A910]"
                   >
-                    <LetterIcon className="h-5 w-5 text-[#E5A910]" />
+                    <LetterIcon className="h-5 w-5 shrink-0 text-[#E5A910]" />
                     <span>
                       <span className="block text-xs text-[#9BB0CE]">E-mail Comercial</span>
                       <span className="text-base font-semibold text-white">{COMPANY.email}</span>
@@ -125,18 +120,15 @@ export function ContactFooter() {
                   href={COMPANY.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between rounded-xl border border-white/12 bg-[#0B1A33]/70 px-5 py-4 transition-colors hover:border-[#E5A910]/60"
+                  className="flex items-center gap-3.5 rounded-xl border border-white/12 bg-[#0B1A33]/65 px-5 py-4 transition-colors hover:border-[#E5A910]/60"
                 >
-                  <span className="flex items-center gap-3.5">
-                    <InstagramIcon className="h-5 w-5 text-[#E5A910]" />
-                    <span>
-                      <span className="block text-xs text-[#9BB0CE]">Instagram Oficial</span>
-                      <span className="text-base font-semibold text-white">
-                        {COMPANY.instagramHandle}
-                      </span>
+                  <InstagramIcon className="h-5 w-5 shrink-0 text-[#E5A910]" />
+                  <span>
+                    <span className="block text-xs text-[#9BB0CE]">Instagram Oficial</span>
+                    <span className="text-base font-semibold text-white">
+                      {COMPANY.instagramHandle}
                     </span>
                   </span>
-                  <ArrowRightUpIcon className="h-4 w-4 text-[#9BB0CE]" />
                 </a>
               </div>
             </div>
@@ -145,7 +137,7 @@ export function ContactFooter() {
             <div className="lg:col-span-7">
               <form
                 onSubmit={handleSubmit}
-                className="rounded-2xl border border-white/12 bg-[#0B1A33]/75 p-6 shadow-[0_24px_60px_rgba(0,0,0,0.35)] sm:p-9"
+                className="rounded-2xl border border-white/12 bg-[#0B1A33]/65 p-6 sm:p-9"
               >
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
@@ -235,12 +227,12 @@ export function ContactFooter() {
                     rows={4}
                     value={details}
                     onChange={(e) => setDetails(e.target.value)}
-                    placeholder="Informe capacidade do tanque, gás (O₂, N₂, Ar, CO₂), necessidade de isolamento térmico, reforma ou fabricação sob medida..."
+                    placeholder="Capacidade do tanque, gás utilizado (O₂, N₂, Ar, CO₂) e tipo de serviço..."
                     className="mt-2 w-full resize-none rounded-lg border border-white/15 bg-[#061022] px-4 py-3 text-sm text-white placeholder:text-[#7E94B6] focus:border-[#E5A910] focus:outline-none"
                   />
                 </div>
 
-                <div className="mt-7 flex flex-wrap items-center justify-between gap-4">
+                <div className="mt-7">
                   <MagneticButton
                     type="submit"
                     variant="gold"
@@ -248,9 +240,6 @@ export function ContactFooter() {
                   >
                     Enviar para o WhatsApp Técnico
                   </MagneticButton>
-                  <span className="text-xs text-[#9BB0CE]">
-                    Retorno direto com a equipe em Jarinu/SP.
-                  </span>
                 </div>
               </form>
             </div>
@@ -270,7 +259,9 @@ export function ContactFooter() {
             </div>
 
             <div className="space-y-2 text-sm md:col-span-4">
-              <p className="font-[var(--font-display)] font-bold text-white">Unidade Industrial</p>
+              <p className="font-[var(--font-display)] font-semibold text-white">
+                Unidade Industrial
+              </p>
               <p className="flex items-start gap-2 leading-relaxed">
                 <MapPointIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#E5A910]" />
                 <span>
@@ -282,7 +273,9 @@ export function ContactFooter() {
             </div>
 
             <div className="space-y-2 text-sm md:col-span-3">
-              <p className="font-[var(--font-display)] font-bold text-white">Dados Cadastrais</p>
+              <p className="font-[var(--font-display)] font-semibold text-white">
+                Dados Cadastrais
+              </p>
               <p>{COMPANY.legalName}</p>
               <p className="tabular-spec text-xs text-[#B9CAE2]">CNPJ {COMPANY.cnpj}</p>
               <p className="tabular-spec text-xs text-[#B9CAE2]">{COMPANY.phoneDisplay}</p>

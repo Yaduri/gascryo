@@ -1,9 +1,9 @@
 import { useCallback, useRef, useState } from 'react';
-import { ArrowRightUpIcon } from '@solar-icons/react/linear/arrow-right-up';
 import { CheckIcon } from '@solar-icons/react/linear/check';
 import { TransferHorizontalIcon } from '@solar-icons/react/linear/transfer-horizontal';
 import { buildWhatsAppUrl } from '../data/gascryo';
 import { MagneticButton } from './MagneticButton';
+import { WhatsAppIcon } from './BrandIcons';
 
 const CABIN_SCOPE = [
   {
@@ -90,26 +90,25 @@ export function BeforeAfterSection() {
       onMouseLeave={() => setSpotlight((s) => ({ ...s, active: false }))}
       className="relative overflow-hidden bg-[#061022] py-20 text-white sm:py-28"
     >
-      {/* Hub Animation: Spotlight que segue o mouse */}
+      {/* Spotlight sutil acompanhando o ponteiro */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 transition-opacity duration-500"
         style={{
           opacity: spotlight.active ? 1 : 0,
-          background: `radial-gradient(620px circle at ${spotlight.x}% ${spotlight.y}%, rgba(229, 169, 16, 0.09), rgba(14, 79, 168, 0.08) 40%, transparent 72%)`,
+          background: `radial-gradient(580px circle at ${spotlight.x}% ${spotlight.y}%, rgba(229, 169, 16, 0.08), rgba(14, 79, 168, 0.06) 40%, transparent 72%)`,
         }}
       />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid items-end gap-8 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <h2 className="font-[var(--font-display)] text-[2rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-white sm:text-[2.75rem]">
+            <h2 className="font-[var(--font-display)] text-[2rem] font-semibold leading-[1.12] tracking-[-0.025em] text-white sm:text-[2.65rem]">
               Reforma de cabine e conjunto criogênico na prática.
             </h2>
-            <p className="mt-4 max-w-[60ch] text-[1.05rem] leading-relaxed text-[#B9CAE2]">
-              Arraste o controle central com o mouse, o dedo ou as setas do teclado para comparar o
-              desgaste de uma cabine oxidada com o padrão de restauração, vedação e acabamento
-              industrial entregue pela GasCryo.
+            <p className="mt-4 max-w-[58ch] text-[1.03rem] leading-relaxed text-[#B9CAE2]">
+              Recuperação completa de tubulações oxidadas, válvulas, isolamento térmico e pintura
+              industrial para devolver segurança e desempenho operacional ao equipamento.
             </p>
           </div>
           <div className="flex lg:col-span-5 lg:justify-end">
@@ -120,7 +119,7 @@ export function BeforeAfterSection() {
               target="_blank"
               rel="noopener noreferrer"
               variant="gold"
-              icon={<ArrowRightUpIcon className="h-4 w-4" />}
+              icon={<WhatsAppIcon className="h-4 w-4" />}
             >
               Avaliar meu equipamento
             </MagneticButton>
@@ -143,9 +142,9 @@ export function BeforeAfterSection() {
               onPointerUp={handlePointerUp}
               onPointerCancel={handlePointerUp}
               onKeyDown={handleKeyDown}
-              className="relative aspect-[16/10] w-full select-none overflow-hidden rounded-2xl border border-white/15 bg-[#040B18] shadow-[0_24px_60px_rgba(0,0,0,0.5)] cursor-ew-resize touch-none"
+              className="relative aspect-[16/10] w-full select-none overflow-hidden rounded-2xl border border-white/15 bg-[#040B18] shadow-[0_14px_36px_rgba(0,0,0,0.35)] cursor-ew-resize touch-none"
             >
-              {/* Right / Base Layer: AFTER (Restored cryogenic manifold & tank) */}
+              {/* Right / Base Layer: AFTER */}
               <img
                 src="/images/hero-tank.jpg"
                 alt="Conjunto criogênico após reforma completa: pintura industrial branca e tubulação em aço inox restaurada"
@@ -153,7 +152,7 @@ export function BeforeAfterSection() {
                 className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[76%_56%]"
               />
 
-              {/* Left / Clipped Layer: BEFORE (Aged oxidized cryogenic cabin) */}
+              {/* Left / Clipped Layer: BEFORE */}
               <div
                 className="pointer-events-none absolute inset-0 overflow-hidden"
                 style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
@@ -170,7 +169,7 @@ export function BeforeAfterSection() {
               <span className="pointer-events-none absolute top-4 left-4 rounded-md bg-[#061022]/85 px-3 py-1.5 text-xs font-semibold text-[#E4EDF9] backdrop-blur-sm border border-white/15">
                 Antes da reforma
               </span>
-              <span className="pointer-events-none absolute top-4 right-4 rounded-md bg-[#E5A910] px-3 py-1.5 text-xs font-bold text-[#061022]">
+              <span className="pointer-events-none absolute top-4 right-4 rounded-md bg-[#E5A910] px-3 py-1.5 text-xs font-semibold text-[#061022]">
                 Depois da GasCryo
               </span>
 
@@ -180,14 +179,13 @@ export function BeforeAfterSection() {
                 className="pointer-events-none absolute top-0 bottom-0 w-[2px] bg-[#E5A910]"
                 style={{ left: `${position}%` }}
               >
-                <div className="absolute top-1/2 left-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-[#061022] bg-[#E5A910] text-[#061022] shadow-[0_8px_24px_rgba(0,0,0,0.55)]">
+                <div className="absolute top-1/2 left-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-[#061022] bg-[#E5A910] text-[#061022] shadow-[0_6px_18px_rgba(0,0,0,0.45)]">
                   <TransferHorizontalIcon className="h-5 w-5" />
                 </div>
               </div>
             </div>
             <p className="mt-3 text-xs text-[#9BB0CE]">
-              Ilustração representativa do processo de restauração; fotos técnicas do seu equipamento
-              são registradas em cada etapa da reforma.
+              Imagens ilustrativas do padrão de reforma estrutural e acabamento industrial.
             </p>
           </div>
 
@@ -199,7 +197,7 @@ export function BeforeAfterSection() {
                     <CheckIcon className="h-3.5 w-3.5" />
                   </span>
                   <div>
-                    <h3 className="font-[var(--font-display)] text-base font-bold text-white">
+                    <h3 className="font-[var(--font-display)] text-base font-semibold text-white">
                       {item.title}
                     </h3>
                     <p className="mt-1 text-sm leading-relaxed text-[#9BB0CE]">{item.detail}</p>

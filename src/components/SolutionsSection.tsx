@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
-import { ArrowRightUpIcon } from '@solar-icons/react/linear/arrow-right-up';
 import { CheckCircleIcon } from '@solar-icons/react/bold-duotone/check-circle';
 import { SOLUTIONS, buildWhatsAppUrl } from '../data/gascryo';
 import { MagneticButton } from './MagneticButton';
+import { WhatsAppIcon } from './BrandIcons';
 
 export function SolutionsSection() {
   const [activeId, setActiveId] = useState(SOLUTIONS[0].id);
@@ -18,20 +18,16 @@ export function SolutionsSection() {
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="max-w-3xl">
-          <h2 className="font-[var(--font-display)] text-[2rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#08162E] sm:text-[2.75rem]">
+          <h2 className="font-[var(--font-display)] text-[2rem] font-semibold leading-[1.12] tracking-[-0.025em] text-[#08162E] sm:text-[2.65rem]">
             Fabricação, reforma e manutenção no mesmo padrão de segurança.
           </h2>
-          <p className="mt-4 max-w-[60ch] text-[1.05rem] leading-relaxed text-[#425573]">
-            Selecione uma frente técnica para conhecer o escopo de engenharia, materiais e controle
-            de qualidade aplicados pela GasCryo.
-          </p>
         </div>
 
         {/* Animated Tabs with Sliding Pill (layoutId) */}
         <div
           role="tablist"
           aria-label="Frentes de atuação GasCryo"
-          className="mt-10 inline-flex max-w-full flex-wrap gap-1.5 rounded-xl border border-[#08162E]/10 bg-white p-1.5 shadow-[0_6px_24px_rgba(8,22,46,0.06)]"
+          className="mt-9 inline-flex max-w-full flex-wrap gap-1.5 rounded-xl border border-[#08162E]/10 bg-white p-1.5"
         >
           {SOLUTIONS.map((tab) => {
             const isActive = tab.id === activeId;
@@ -62,7 +58,7 @@ export function SolutionsSection() {
         </div>
 
         {/* Active Solution Architectural Panel */}
-        <div className="mt-10">
+        <div className="mt-8">
           <AnimatePresence mode="wait">
             <motion.div
               key={current.id}
@@ -73,16 +69,11 @@ export function SolutionsSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={prefersReduced ? undefined : { opacity: 0, y: -10 }}
               transition={{ duration: 0.34, ease: [0.16, 1, 0.3, 1] }}
-              className="grid items-stretch gap-8 rounded-2xl border border-[#08162E]/10 bg-white p-6 shadow-[0_20px_50px_rgba(8,22,46,0.07)] sm:p-10 lg:grid-cols-12"
+              className="grid items-stretch gap-8 rounded-2xl border border-[#08162E]/10 bg-white p-6 shadow-[0_8px_24px_rgba(8,22,46,0.05)] sm:p-10 lg:grid-cols-12"
             >
               <div className="flex flex-col justify-between lg:col-span-6">
                 <div>
-                  <div className="inline-flex items-center gap-2 rounded-md bg-[#08162E]/6 px-3 py-1.5 text-xs font-semibold text-[#0E4FA8]">
-                    <span>{current.specLabel}:</span>
-                    <span className="tabular-spec text-[#08162E]">{current.specValue}</span>
-                  </div>
-
-                  <h3 className="mt-5 font-[var(--font-display)] text-2xl font-bold leading-tight tracking-[-0.02em] text-[#08162E] sm:text-[1.95rem]">
+                  <h3 className="font-[var(--font-display)] text-2xl font-semibold leading-tight tracking-[-0.02em] text-[#08162E] sm:text-[1.9rem]">
                     {current.title}
                   </h3>
 
@@ -106,7 +97,7 @@ export function SolutionsSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     variant="navy"
-                    icon={<ArrowRightUpIcon className="h-4 w-4" />}
+                    icon={<WhatsAppIcon className="h-4 w-4 text-[#25D366]" />}
                   >
                     {current.ctaLabel}
                   </MagneticButton>

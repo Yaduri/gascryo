@@ -15,13 +15,9 @@ export function FaqSection() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <h2 className="font-[var(--font-display)] text-[2rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-white sm:text-[2.65rem]">
+            <h2 className="font-[var(--font-display)] text-[2rem] font-semibold leading-[1.12] tracking-[-0.025em] text-white sm:text-[2.6rem]">
               Dúvidas frequentes antes de solicitar orçamento.
             </h2>
-            <p className="mt-4 max-w-[44ch] text-[1.02rem] leading-relaxed text-[#9BB0CE]">
-              Respostas diretas sobre nossa abrangência nacional, tipos de tanques atendidos,
-              ensaios de segurança e fabricação sob medida.
-            </p>
           </div>
 
           <div className="divide-y divide-white/12 border-y border-white/12 lg:col-span-7">
@@ -41,7 +37,7 @@ export function FaqSection() {
                       onClick={() => setOpenIndex(isOpen ? null : idx)}
                       className="flex w-full items-center justify-between gap-6 py-5 text-left transition-colors hover:text-[#E5A910] cursor-pointer"
                     >
-                      <span className="font-[var(--font-display)] text-lg font-bold text-white">
+                      <span className="font-[var(--font-display)] text-lg font-semibold text-white">
                         {item.question}
                       </span>
                       <motion.span

@@ -50,7 +50,7 @@ export function FloatingWhatsApp() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Falar com a GasCryo pelo WhatsApp"
-        className="whatsapp-pulse relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_14px_34px_rgba(37,211,102,0.35)] transition-transform duration-200 hover:scale-105"
+        className="whatsapp-pulse relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_8px_22px_rgba(37,211,102,0.28)] transition-colors duration-200 hover:bg-[#20BD5A]"
       >
         <WhatsAppIcon className="h-7 w-7" />
       </a>

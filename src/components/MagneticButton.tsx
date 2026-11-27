@@ -47,8 +47,8 @@ export function MagneticButton({
   };
 
   const stylesByVariant = {
-    gold: 'bg-[#E5A910] text-[#061022] hover:bg-[#F2BA26] shadow-[0_12px_30px_rgba(229,169,16,0.22)] font-semibold',
-    navy: 'bg-[#08162E] text-white hover:bg-[#0E2448] shadow-[0_10px_28px_rgba(6,16,34,0.22)] font-semibold',
+    gold: 'bg-[#E5A910] text-[#061022] hover:bg-[#F2BA26] shadow-[0_6px_18px_rgba(229,169,16,0.16)] font-semibold',
+    navy: 'bg-[#08162E] text-white hover:bg-[#0E2448] shadow-[0_6px_18px_rgba(6,16,34,0.16)] font-semibold',
     outline:
       'border border-[#9BB0CE]/35 text-[#F4F7FB] hover:border-[#E5A910] hover:text-[#E5A910] font-medium bg-white/[0.02]',
   }[variant];

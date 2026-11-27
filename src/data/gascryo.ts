@@ -26,8 +26,6 @@ export interface SolutionTab {
   summary: string;
   image: string;
   imageAlt: string;
-  specLabel: string;
-  specValue: string;
   deliverables: string[];
   ctaLabel: string;
   whatsappDraft: string;
@@ -42,8 +40,6 @@ export const SOLUTIONS: SolutionTab[] = [
       'Projetamos e fabricamos reservatórios criogênicos para armazenamento estacionário em plantas industriais e montagem rodoviária sobre caminhões e carretas, unindo robustez estrutural e rigor técnico.',
     image: '/images/tank-refurbish.jpg',
     imageAlt: 'Tanque criogênico estacionário vertical e tanque rodoviário em galpão industrial da GasCryo',
-    specLabel: 'Aplicação',
-    specValue: 'Estacionário & Rodoviário',
     deliverables: [
       'Fabricação sob medida conforme especificações operacionais',
       'Montagem de cabines, carrocerias e estruturas para transporte criogênico',
@@ -62,8 +58,6 @@ export const SOLUTIONS: SolutionTab[] = [
       'Restauramos tanques criogênicos estacionários, rodoviários e cabines operacionais para estender a vida útil do ativo com máxima segurança, estanqueidade e acabamento industrial.',
     image: '/images/hero-tank.jpg',
     imageAlt: 'Tanque criogênico rodoviário reformado com pintura industrial branca e tubulação em aço inox',
-    specLabel: 'Isolamento & Acabamento',
-    specValue: 'Poliuretano · Alumínio · Pintura Técnica',
     deliverables: [
       'Reforma estrutural completa de tanques e cabines criogênicas',
       'Isolamento e recuperação térmica em poliuretano e alumínio',
@@ -82,8 +76,6 @@ export const SOLUTIONS: SolutionTab[] = [
       'Cada aquecedor de CO₂ é fabricado conforme as especificações do cliente, com acabamento em aço inox, serpentina interna dimensionada e rigoroso controle de fabricação para desempenho contínuo.',
     image: '/images/heater-co2.jpg',
     imageAlt: 'Aquecedor de CO₂ fabricado sob medida em aço inox escovado com serpentina interna',
-    specLabel: 'Construção',
-    specValue: 'Aço Inox · Sob Especificação',
     deliverables: [
       'Fabricado conforme vazão, pressão e dimensões do projeto',
       'Construção e acabamento em aço inox de alta durabilidade',
@@ -102,8 +94,6 @@ export const SOLUTIONS: SolutionTab[] = [
       'Equipe técnica especializada em soldagem TIG e MIG/MAG, caldeiraria pesada e testes de segurança para garantir que cada equipamento opere com zero vazamento e total confiabilidade.',
     image: '/images/tank-refurbish.jpg',
     imageAlt: 'Equipamentos criogênicos passando por inspeção e controle de qualidade industrial',
-    specLabel: 'Validação',
-    specValue: '100% Testado · Microvazamento',
     deliverables: [
       'Teste de microvazamento de alta precisão em linhas e vasos',
       'Manutenção preventiva e corretiva em sistemas criogênicos',
@@ -120,7 +110,6 @@ export interface ProcessStep {
   number: string;
   title: string;
   description: string;
-  tag: string;
 }
 
 export const PROCESS_STEPS: ProcessStep[] = [
@@ -129,35 +118,30 @@ export const PROCESS_STEPS: ProcessStep[] = [
     title: 'Avaliação e diagnóstico técnico',
     description:
       'Levantamento completo das condições estruturais, integridade do isolamento térmico, válvulas, tubulações e requisitos operacionais do cliente.',
-    tag: 'Inspeção inicial',
   },
   {
     number: '02',
     title: 'Caldeiraria e soldagem especializada',
     description:
       'Execução estrutural sob medida e soldagem industrial TIG e MIG/MAG em aço inox e ligas metálicas com rigor dimensional.',
-    tag: 'TIG · MIG/MAG',
   },
   {
     number: '03',
     title: 'Isolamento e recuperação térmica',
     description:
       'Aplicação ou recomposição do sistema térmico em poliuretano e revestimento em alumínio para preservar o gás liquefeito com mínima perda.',
-    tag: 'Poliuretano & Alumínio',
   },
   {
     number: '04',
     title: 'Teste de microvazamento e validação',
     description:
       'Controle rigoroso de qualidade e ensaios de estanqueidade para assegurar que 100% dos equipamentos atendam aos padrões de segurança criogênica.',
-    tag: '100% Testado',
   },
   {
     number: '05',
     title: 'Pintura industrial e entrega nacional',
     description:
       'Acabamento em pintura técnica de alta resistência à corrosão e condensação, seguido de conferência final e expedição para qualquer região do Brasil.',
-    tag: 'Todo o Brasil',
   },
 ];
 

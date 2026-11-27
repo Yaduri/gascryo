@@ -1,6 +1,4 @@
 import { motion, useReducedMotion } from 'motion/react';
-import { ArrowRightDownIcon } from '@solar-icons/react/linear/arrow-right-down';
-import { ArrowRightUpIcon } from '@solar-icons/react/linear/arrow-right-up';
 import { GlobalIcon } from '@solar-icons/react/bold-duotone/global';
 import { ShieldCheckIcon } from '@solar-icons/react/bold-duotone/shield-check';
 import { SnowflakeIcon } from '@solar-icons/react/bold-duotone/snowflake';
@@ -23,21 +21,11 @@ export function Hero() {
       id="inicio"
       className="relative overflow-hidden bg-[#061022] pt-28 pb-16 sm:pt-32 sm:pb-24 lg:pt-36 lg:pb-28"
     >
-      {/* Subtle architectural directional glow from top-right industrial lighting */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-40 right-[-10%] h-[540px] w-[540px] rounded-full bg-[#0E4FA8]/25 blur-[120px]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-[-8%] h-[360px] w-[360px] rounded-full bg-[#E5A910]/8 blur-[110px]"
-      />
-
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
           {/* Editorial Copy Column */}
           <div className="lg:col-span-6">
-            <h1 className="font-[var(--font-display)] text-[2.45rem] font-extrabold leading-[1.03] tracking-[-0.03em] text-white sm:text-[3.35rem] lg:text-[3.75rem]">
+            <h1 className="font-[var(--font-display)] text-[2.45rem] font-bold leading-[1.04] tracking-[-0.03em] text-white sm:text-[3.3rem] lg:text-[3.7rem]">
               {HERO_LINES.map((line, idx) => (
                 <span key={line} className="block overflow-hidden py-0.5">
                   <motion.span
@@ -73,25 +61,17 @@ export function Hero() {
               transition={{ duration: 0.65, delay: 0.48, ease: EXPO_EASE }}
               className="mt-9 flex flex-wrap items-center gap-4"
             >
-              <MagneticButton
-                href="#orcamento"
-                variant="gold"
-                icon={<ArrowRightUpIcon className="h-4 w-4" />}
-              >
+              <MagneticButton href="#orcamento" variant="gold">
                 Solicitar orçamento técnico
               </MagneticButton>
 
-              <MagneticButton
-                href="#antes-depois"
-                variant="outline"
-                icon={<ArrowRightDownIcon className="h-4 w-4" />}
-              >
+              <MagneticButton href="#antes-depois" variant="outline">
                 Ver reforma antes e depois
               </MagneticButton>
             </motion.div>
           </div>
 
-          {/* Photographic Industrial Plate with Clip-Path Reveal */}
+          {/* Clean Photographic Industrial Plate with Clip-Path Reveal */}
           <div className="lg:col-span-6">
             <motion.div
               initial={
@@ -101,7 +81,7 @@ export function Hero() {
               }
               animate={{ clipPath: 'inset(0% 0% 0% 0% round 14px)', opacity: 1 }}
               transition={{ duration: 0.95, delay: 0.18, ease: EXPO_EASE }}
-              className="relative overflow-hidden rounded-[14px] border border-white/12 bg-[#040B18] shadow-[0_28px_70px_rgba(0,0,0,0.55)]"
+              className="relative overflow-hidden rounded-[14px] border border-white/12 bg-[#040B18] shadow-[0_16px_40px_rgba(0,0,0,0.35)]"
             >
               <motion.img
                 src="/images/hero-tank.jpg"
@@ -111,19 +91,11 @@ export function Hero() {
                 transition={{ duration: 1.2, delay: 0.18, ease: EXPO_EASE }}
                 className="aspect-[16/10] w-full object-cover"
               />
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#061022]/80 via-transparent to-transparent"
-              />
-              <div className="absolute right-4 bottom-4 left-4 flex flex-wrap items-center justify-between gap-3 border-t border-white/15 pt-3 text-xs text-[#E4EDF9]">
-                <span className="font-medium">Tanques Estacionários e Rodoviários</span>
-                <span className="tabular-spec text-[#E5A910]">Jarinu/SP · Todo o Brasil</span>
-              </div>
             </motion.div>
           </div>
         </div>
 
-        {/* Verified Technical Specification Strip (real facts only) */}
+        {/* Verified Technical Specification Strip */}
         <motion.div
           initial={prefersReduced ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -133,7 +105,7 @@ export function Hero() {
           <div className="flex items-start gap-3.5">
             <GlobalIcon className="mt-0.5 h-5 w-5 shrink-0 text-[#E5A910]" />
             <div>
-              <p className="font-[var(--font-display)] text-base font-bold text-white">
+              <p className="font-[var(--font-display)] text-base font-semibold text-white">
                 {COMPANY.coverage}
               </p>
               <p className="mt-1 text-sm text-[#9BB0CE]">
@@ -145,7 +117,7 @@ export function Hero() {
           <div className="flex items-start gap-3.5">
             <ShieldCheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-[#E5A910]" />
             <div>
-              <p className="font-[var(--font-display)] text-base font-bold text-white">
+              <p className="font-[var(--font-display)] text-base font-semibold text-white">
                 100% testado contra microvazamento
               </p>
               <p className="mt-1 text-sm text-[#9BB0CE]">
@@ -157,7 +129,7 @@ export function Hero() {
           <div className="flex items-start gap-3.5">
             <SnowflakeIcon className="mt-0.5 h-5 w-5 shrink-0 text-[#E5A910]" />
             <div>
-              <p className="font-[var(--font-display)] text-base font-bold text-white">
+              <p className="font-[var(--font-display)] text-base font-semibold text-white">
                 O₂, N₂, Argônio e CO₂
               </p>
               <p className="mt-1 text-sm text-[#9BB0CE]">

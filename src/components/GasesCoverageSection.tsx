@@ -1,14 +1,13 @@
 import { motion, useReducedMotion } from 'motion/react';
-import { DeliveryIcon } from '@solar-icons/react/bold-duotone/delivery';
 import { MapPointIcon } from '@solar-icons/react/bold-duotone/map-point';
 import { GASES } from '../data/gascryo';
 
 const ROUTES = [
-  { id: 'sp-ne', d: 'M 218 258 Q 260 190 290 120', label: 'Nordeste' },
-  { id: 'sp-n', d: 'M 218 258 Q 165 180 128 96', label: 'Norte' },
-  { id: 'sp-co', d: 'M 218 258 Q 182 215 162 178', label: 'Centro-Oeste' },
-  { id: 'sp-mg', d: 'M 218 258 Q 245 232 256 218', label: 'Sudeste' },
-  { id: 'sp-s', d: 'M 218 258 Q 204 295 190 326', label: 'Sul' },
+  { id: 'sp-ne', d: 'M 218 258 Q 260 190 290 120' },
+  { id: 'sp-n', d: 'M 218 258 Q 165 180 128 96' },
+  { id: 'sp-co', d: 'M 218 258 Q 182 215 162 178' },
+  { id: 'sp-mg', d: 'M 218 258 Q 245 232 256 218' },
+  { id: 'sp-s', d: 'M 218 258 Q 204 295 190 326' },
 ];
 
 export function GasesCoverageSection() {
@@ -20,15 +19,15 @@ export function GasesCoverageSection() {
         <div className="grid gap-12 lg:grid-cols-12">
           {/* Left: Structured Cryogenic Gas Specification Table */}
           <div className="lg:col-span-7">
-            <h2 className="font-[var(--font-display)] text-[2rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#08162E] sm:text-[2.65rem]">
+            <h2 className="font-[var(--font-display)] text-[2rem] font-semibold leading-[1.12] tracking-[-0.025em] text-[#08162E] sm:text-[2.6rem]">
               Preparados para temperaturas extremas e gases liquefeitos.
             </h2>
-            <p className="mt-4 max-w-[58ch] text-[1.05rem] leading-relaxed text-[#425573]">
+            <p className="mt-4 max-w-[58ch] text-[1.03rem] leading-relaxed text-[#425573]">
               Nossos tanques criogênicos, cabines e aquecedores em inox atendem às exigências
               térmicas e mecânicas dos principais gases industriais.
             </p>
 
-            <div className="mt-8 overflow-hidden rounded-2xl border border-[#08162E]/12 bg-white shadow-[0_14px_40px_rgba(8,22,46,0.06)]">
+            <div className="mt-8 overflow-hidden rounded-2xl border border-[#08162E]/12 bg-white shadow-[0_8px_24px_rgba(8,22,46,0.05)]">
               <div className="divide-y divide-[#08162E]/10">
                 {GASES.map((gas) => (
                   <div
@@ -40,7 +39,7 @@ export function GasesCoverageSection() {
                         {gas.formula}
                       </span>
                       <div>
-                        <p className="font-[var(--font-display)] font-bold text-[#08162E]">
+                        <p className="font-[var(--font-display)] font-semibold text-[#08162E]">
                           {gas.name}
                         </p>
                         <p className="tabular-spec text-xs text-[#425573]">{gas.code}</p>
@@ -62,22 +61,17 @@ export function GasesCoverageSection() {
             </div>
           </div>
 
-          {/* Right: National Coverage Panel (Jarinu/SP -> Todo o Brasil) */}
+          {/* Right: National Coverage Panel */}
           <div className="lg:col-span-5">
-            <div className="flex h-full flex-col justify-between rounded-2xl bg-[#061022] p-7 text-white shadow-[0_24px_60px_rgba(6,16,34,0.22)] sm:p-9">
+            <div className="flex h-full flex-col justify-between rounded-2xl border border-[#08162E]/12 bg-[#061022] p-7 text-white sm:p-9">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-md bg-[#E5A910]/15 px-3 py-1.5 text-xs font-semibold text-[#E5A910]">
-                  <DeliveryIcon className="h-4 w-4" />
-                  <span>Cobertura Nacional</span>
-                </div>
-
-                <h3 className="mt-5 font-[var(--font-display)] text-2xl font-extrabold leading-tight sm:text-[1.85rem]">
+                <h3 className="font-[var(--font-display)] text-2xl font-semibold leading-tight sm:text-[1.8rem]">
                   Base industrial em Jarinu/SP. Atendimento em todo o Brasil.
                 </h3>
 
-                <p className="mt-3 text-sm leading-relaxed text-[#B9CAE2]">
-                  Localizados estrategicamente no eixo industrial de Jundiaí — com acesso ágil às
-                  rodovias Anhanguera, Bandeirantes e Dom Pedro I — recebemos tanques rodoviários e
+                <p className="mt-3.5 text-sm leading-relaxed text-[#B9CAE2]">
+                  Localizados no eixo industrial de Jundiaí — com acesso direto às rodovias
+                  Anhanguera, Bandeirantes e Dom Pedro I — recebemos tanques rodoviários e
                   expedimos equipamentos sob medida para todas as regiões do país.
                 </p>
               </div>
@@ -90,7 +84,6 @@ export function GasesCoverageSection() {
                   role="img"
                   aria-label="Mapa esquemático de atendimento nacional a partir de Jarinu, São Paulo"
                 >
-                  {/* Stylized geometric outline of Brazil */}
                   <path
                     d="M112 36 L176 28 L228 52 L286 78 L322 118 L314 166 L286 218 L266 254 L232 276 L204 316 L186 346 L158 320 L166 284 L142 252 L118 228 L88 188 L56 154 L44 114 L74 74 Z"
                     fill="#0B1A33"
@@ -98,7 +91,6 @@ export function GasesCoverageSection() {
                     strokeWidth="1.5"
                   />
 
-                  {/* Animated dispatch arcs from Jarinu/SP */}
                   {ROUTES.map((route, idx) => (
                     <motion.path
                       key={route.id}
@@ -118,7 +110,6 @@ export function GasesCoverageSection() {
                     />
                   ))}
 
-                  {/* Destination Nodes */}
                   {[
                     [290, 120],
                     [128, 96],
@@ -129,7 +120,6 @@ export function GasesCoverageSection() {
                     <circle key={i} cx={cx} cy={cy} r="4" fill="#9BB0CE" />
                   ))}
 
-                  {/* Hub Marker: Jarinu / SP */}
                   <circle cx="218" cy="258" r="14" fill="#E5A910" opacity="0.2" />
                   <circle cx="218" cy="258" r="6" fill="#E5A910" />
                   <text
@@ -138,7 +128,7 @@ export function GasesCoverageSection() {
                     fill="#FFFFFF"
                     fontSize="12"
                     fontFamily="Archivo, sans-serif"
-                    fontWeight="700"
+                    fontWeight="600"
                   >
                     Jarinu/SP
                   </text>
