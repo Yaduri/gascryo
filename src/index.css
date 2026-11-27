@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cryo-navy: #061022;
+  --color-cryo-surface: #0b1a33;
+  --color-cryo-deep: #040b18;
+  --color-cryo-royal: #0e4fa8;
+  --color-cryo-gold: #e5a910;
+  --color-cryo-gold-hover: #f2ba26;
+  --color-alloy-light: #f3f6fa;
+  --color-alloy-card: #ffffff;
+  --color-alloy-ink: #08162e;
+  --color-alloy-muted: #425573;
+  --color-steel-muted: #9bb0ce;
+
+  --font-display: "Archivo", system-ui, -apple-system, sans-serif;
+  --font-sans: "Manrope", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-cryo-navy);
+    color: #f4f7fb;
+    font-family: var(--font-sans);
+    scroll-behavior: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    overflow-x: clip;
+    background-color: var(--color-cryo-navy);
+    color: #f4f7fb;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: var(--color-cryo-gold);
+    color: var(--color-cryo-navy);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-cryo-gold);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Custom scrollbar themed to Cryo Navy & Precision Gold */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #040b18;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1b3158;
+    border-radius: 999px;
+    border: 2px solid #040b18;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-cryo-gold);
+  }
+}
+
+/* Hub animation: Sublinhado que se desenha nos links */
+.link-draw {
+  position: relative;
+  text-decoration: none;
+}
+.link-draw::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--color-cryo-gold);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-draw:hover::after,
+.link-draw:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+/* Hub animation: Botão com texto que rola no hover */
+.btn-roll-track {
+  display: inline-flex;
+  flex-direction: column;
+  height: 1.35em;
+  overflow: hidden;
+  line-height: 1.35em;
+}
+.btn-roll-item {
+  display: block;
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.group:hover .btn-roll-item,
+.group:focus-visible .btn-roll-item {
+  transform: translateY(-100%);
+}
+
+/* Tabular figures for real temperatures, ONU codes and CNPJ */
+.tabular-spec {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Discreet WhatsApp pulse */
+@keyframes cryoPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  75%,
+  100% {
+    transform: scale(1.42);
+    opacity: 0;
+  }
+}
+
+.whatsapp-pulse::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: #25d366;
+  animation: cryoPulse 2.6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  z-index: -1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-pulse::before {
+    animation: none;
+  }
+  .btn-roll-item,
+  .link-draw::after {
+    transition: none;
+  }
+}
